@@ -1,4 +1,13 @@
-# ContalinkWeb
+# README
+
+## setup
+
+1. Clone this project.
+2. Install dependencies with `npm install`.
+3. Run server with `ng serve`.
+
+**NOTE:** Make sure your API server is running on port `3000`.
+
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.3.
 
