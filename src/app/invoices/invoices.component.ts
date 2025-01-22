@@ -13,8 +13,8 @@ import { environment } from '../../environments/environment';
   styleUrls: ['./invoices.component.scss'],
 })
 export class InvoicesComponent {
-  fromDate: string = '2022-01-01';
-  toDate: string = '2022-03-01';
+  fromDate: string = '';
+  toDate: string = '';
   invoices: any[] = [];
   submitted: boolean = false;
   loading: boolean = false;
