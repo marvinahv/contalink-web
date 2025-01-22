@@ -18,6 +18,7 @@ export class InvoicesComponent {
   invoices: any[] = [];
   submitted: boolean = false;
   loading: boolean = false;
+  showResults: boolean = false;
 
   constructor(private http: HttpClient) {}
 
@@ -41,6 +42,7 @@ export class InvoicesComponent {
           this.invoices = data;
           this.submitted = true;
           this.loading = false;
+          this.showResults = true;
         },
         (error) => {
           this.loading = false;
@@ -48,5 +50,13 @@ export class InvoicesComponent {
           alert('Ocurrió un error al obtener las facturas.');
         }
       );
+  }
+
+  resetForm() {
+    this.fromDate = '';
+    this.toDate = '';
+    this.invoices = [];
+    this.submitted = false;
+    this.showResults = false;
   }
 }

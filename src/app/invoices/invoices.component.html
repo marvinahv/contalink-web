@@ -1,7 +1,7 @@
 <div class="container">
   <h1>Consulta de Facturas</h1>
 
-  <div *ngIf="!loading">
+  <div *ngIf="!showResults && !loading">
     <p>
       Selecciona una fecha inicial y una fecha final para buscar las facturas dentro de ese rango.
     </p>
@@ -37,11 +37,12 @@
     <p>Obteniendo resultados...</p>
   </div>
 
-  <div *ngIf="invoices.length > 0" class="results">
+  <div *ngIf="showResults && !loading" class="results">
     <p>
       Se encontraron {{ invoices.length }} facturas para el rango de fechas proporcionado.
     </p>
-    <table>
+    <button (click)="resetForm()">Realizar otra búsqueda</button>
+    <table *ngIf="invoices.length > 0">
       <thead>
         <tr>
           <th>Fecha</th>
@@ -60,8 +61,4 @@
       </tbody>
     </table>
   </div>
-
-  <p *ngIf="invoices.length === 0 && submitted" class="no-results">
-    No se encontraron resultados para el rango de fechas proporcionado.
-  </p>
 </div>
