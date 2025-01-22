@@ -2,79 +2,79 @@
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
-  
-  p {
-    font-size: 1.5em;
-    margin-bottom: 1em;
-  }
+}
 
-  form {
-    background-color: whitesmoke;
-    padding: 1em 2em;
+p {
+  font-size: 1.5em;
+  margin-bottom: 1em;
+}
 
-    .inputs {
-      display: flex;
-      gap: 10px;
-    }
+form {
+  background-color: whitesmoke;
+  padding: 1em 2em;
 
-    input {
-      padding: 8px;
-      font-size: 16px;
-    }
-
-    button {
-      width: 280px;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      padding: 10px;
-      font-size: 16px;
-      cursor: pointer;
-      border-radius: 5px;
-
-      &:hover {
-        background-color: #0056b3;
-      }
-    }
-  }
-
-  .form-group {
+  .inputs {
     display: flex;
-    justify-content: start;
-    align-items: center;
-    margin-bottom: 1em;
-
-    label {
-      font-weight: bold;
-      font-size: 1.5em;
-      margin-right: 0.5em;
-    }
+    gap: 10px;
   }
 
-  .results {
-    margin-top: 20px;
+  input {
+    padding: 8px;
+    font-size: 16px;
+  }
+
+  button {
+    width: 280px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+}
+
+.form-group {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-bottom: 1em;
+
+  label {
+    font-weight: bold;
     font-size: 1.5em;
+    margin-right: 0.5em;
+  }
+}
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
+.results {
+  margin-top: 20px;
 
-      th,
-      td {
-        border: 1px solid #ccc;
-        padding: 8px;
-        text-align: left;
-      }
+  table {
+    width: 100%;
+    border-collapse: collapse;
 
-      th {
-        background-color: #f9f9f9;
-      }
+    th,
+    td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+      font-size: 1.3em;
+    }
+
+    th {
+      background-color: #f9f9f9;
     }
   }
+}
 
-  .no-results {
-    color: red;
-    text-align: center;
-    margin-top: 20px;
-  }
+.no-results {
+  color: red;
+  text-align: center;
+  margin-top: 20px;
 }

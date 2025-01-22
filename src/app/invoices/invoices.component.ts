@@ -13,10 +13,11 @@ import { environment } from '../../environments/environment';
   styleUrls: ['./invoices.component.scss'],
 })
 export class InvoicesComponent {
-  fromDate: string = '';
-  toDate: string = '';
+  fromDate: string = '2022-01-01';
+  toDate: string = '2022-03-01';
   invoices: any[] = [];
   submitted: boolean = false;
+  loading: boolean = false;
 
   constructor(private http: HttpClient) {}
 
@@ -31,14 +32,18 @@ export class InvoicesComponent {
       to_date: this.toDate,
     };
 
+    this.loading = true;
+
     this.http
       .get(`${environment.apiUrl}/invoices`, { params })
       .subscribe(
         (data: any) => {
           this.invoices = data;
           this.submitted = true;
+          this.loading = false;
         },
         (error) => {
+          this.loading = false;
           console.error('Error fetching invoices:', error);
           alert('Ocurrió un error al obtener las facturas.');
         }
