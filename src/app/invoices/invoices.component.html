@@ -1,0 +1,53 @@
+<div class="container">
+  <h1>Consulta de Facturas</h1>
+  <form (submit)="fetchInvoices(); $event.preventDefault()">
+    <div>
+      <label for="fromDate">Desde:</label>
+      <input
+        type="date"
+        id="fromDate"
+        [(ngModel)]="fromDate"
+        name="fromDate"
+        required
+      />
+    </div>
+    <div>
+      <label for="toDate">Hasta:</label>
+      <input
+        type="date"
+        id="toDate"
+        [(ngModel)]="toDate"
+        name="toDate"
+        required
+      />
+    </div>
+    <button type="submit">Buscar</button>
+  </form>
+
+  <div *ngIf="invoices.length > 0" class="results">
+    <h2>Resultados</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Fecha</th>
+          <th>Total</th>
+          <th>Número de Factura</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let invoice of invoices">
+          <td>{{ invoice.invoice_date | date: 'mediumDate' }}</td>
+          <td>{{ invoice.total | currency }}</td>
+          <td>{{ invoice.invoice_number }}</td>
+          <td>{{ invoice.status }}</td>
+          
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p *ngIf="invoices.length === 0 && submitted" class="no-results">
+    No se encontraron resultados para el rango de fechas proporcionado.
+  </p>
+</div>
